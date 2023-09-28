@@ -1,3 +1,4 @@
+$schema: https://json.ubl/2.1
 CreditNote:
   ID: 23
   IssueDate: 2023-09-28
@@ -16,10 +17,7 @@ CreditNote:
       EndpointID: "er"
     
   LegalMonetaryTotal:
-    PayableAmount:
-      value: 0
-      currencyID: NOK
-
+    PayableAmount: 0 NOK
   CreditNoteLine:
     - ID: 1
     

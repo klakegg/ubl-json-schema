@@ -1,3 +1,4 @@
+$schema: https://json.ubl/2.1
 Invoice:
   ID: 123
   IssueDate: 2023-09-28
@@ -5,18 +6,19 @@ Invoice:
     Party:
       EndpointID: sender
       PartyIdentification:
-        ID: "234"
+        - ID:
+            value: "234"
+            schemeID: '0129'
+        - ID: e222
   AccountingCustomerParty:
     Party:
       EndpointID: receiver
   LegalMonetaryTotal:
-    PayableAmount: 
-      value: 0
-      currencyID: NOK
+    PayableAmount: 0.00 NOK
   InvoiceLine:
     - ID: 1
-      LineExtensionAmount: 
-        value: 0
-        currencyID: NOK
+      LineExtensionAmount: 0 NOK
       Item:
-        Description: Fist item
+        Description:
+          eng: First item  
+          nok: Første produkt
