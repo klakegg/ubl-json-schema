@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "target/2.1-os.schema.json": ["example/*.yaml"],
+    }
+}

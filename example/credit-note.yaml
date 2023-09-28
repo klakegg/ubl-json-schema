@@ -1,0 +1,25 @@
+CreditNote:
+  ID: 23
+  IssueDate: 2023-09-28
+  Note: 
+    eng: My text here
+    nok: Min tekst her
+  AccountingSupplierParty:
+    Party:
+      EndpointID: "er"
+      PartyIdentification:
+        - ID: 1234
+        - ID: 12346
+    
+  AccountingCustomerParty:
+    Party:
+      EndpointID: "er"
+    
+  LegalMonetaryTotal:
+    PayableAmount:
+      value: 0
+      currencyID: NOK
+
+  CreditNoteLine:
+    - ID: 1
+    

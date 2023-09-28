@@ -1,0 +1,170 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "maxProperties": 1,
+    "properties": {},
+    "definitions": {
+        "baseIdentifier": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "number"
+                },
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                        "value"
+                    ],
+                    "properties": {
+                        "value": {
+                            "oneOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "number"
+                                }
+                            ]
+                        },
+                        "schemeID": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        },
+        "baseText": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "object",
+                    "patternProperties": {
+                        "^[^\\w]$": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        },
+        "baseName": {
+            "$ref": "#/definitions/baseText"
+        },
+        "baseDate": {
+            "type": "string"
+        },
+        "baseTime": {
+            "type": "string"
+        },
+        "baseCode": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "object",
+                    "required": [
+                        "value"
+                    ],
+                    "properties": {
+                        "value": {
+                            "type": "string"
+                        },
+                        "listID": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        },
+        "baseIndicator": {
+            "type": "boolean"
+        },
+        "baseAmount": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "currencyID",
+                "value"
+            ],
+            "properties": {
+                "currencyID": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "number"
+                }
+            }
+        },
+        "baseNumeric": {
+            "type": "number"
+        },
+        "baseQuantity": {
+            "type": "number"
+        },
+        "baseBinaryObject": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                        "value"
+                    ],
+                    "properties": {
+                        "mimeCode": {
+                            "type": "string"
+                        },
+                        "encodingCode": {
+                            "type": "string"
+                        },
+                        "uri": {
+                            "type": "string"
+                        },
+                        "filename": {
+                            "type": "string"
+                        },
+                        "value": {
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        },
+        "baseMeasure": {
+            "oneOf": [
+                {
+                    "type": "number"
+                },
+                {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                        "value"
+                    ],
+                    "properties": {
+                        "unitCode": {
+                            "type": "string"
+                        },
+                        "value": {
+                            "type": "number"
+                        }
+                    }
+                }
+            ]
+        },
+        "basePercent": {
+            "type": "number"
+        },
+        "baseRate": {
+            "type": "number"
+        }
+    }
+}

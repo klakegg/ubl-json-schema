@@ -1,0 +1,22 @@
+Invoice:
+  ID: 123
+  IssueDate: 2023-09-28
+  AccountingSupplierParty:
+    Party:
+      EndpointID: sender
+      PartyIdentification:
+        ID: "234"
+  AccountingCustomerParty:
+    Party:
+      EndpointID: receiver
+  LegalMonetaryTotal:
+    PayableAmount: 
+      value: 0
+      currencyID: NOK
+  InvoiceLine:
+    - ID: 1
+      LineExtensionAmount: 
+        value: 0
+        currencyID: NOK
+      Item:
+        Description: Fist item

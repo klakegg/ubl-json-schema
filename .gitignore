@@ -1,0 +1,4 @@
+/data
+/example/*.json
+/target
+.DS_Store
