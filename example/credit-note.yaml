@@ -1,6 +1,6 @@
-$schema: https://json.ubl/2.1
+$schema: https://json.ubl/2.3
 CreditNote:
-  ID: 23
+  ID: '23'
   IssueDate: 2023-09-28
   Note: 
     eng: My text here
@@ -9,15 +9,13 @@ CreditNote:
     Party:
       EndpointID: "er"
       PartyIdentification:
-        - ID: 1234
-        - ID: 12346
-    
+        - ID: '1234'
+        - ID: '12346'
   AccountingCustomerParty:
     Party:
       EndpointID: "er"
-    
   LegalMonetaryTotal:
     PayableAmount: 0 NOK
   CreditNoteLine:
-    - ID: 1
+    - ID: '1'
     

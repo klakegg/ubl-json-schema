@@ -1,24 +1,56 @@
-$schema: https://json.ubl/2.1
+$schema: https://json.ubl/2.3/Invoice
 Invoice:
-  ID: 123
+
+  CustomizationID:
+    value: my customization id
+    schemeID: my scheme id
+
+  ID: my space id
+
   IssueDate: 2023-09-28
   AccountingSupplierParty:
     Party:
       EndpointID: sender
       PartyIdentification:
+
+        # Alt 0
         - ID:
-            value: "234"
-            schemeID: '0129'
-        - ID: e222
+            value: '991825827'
+            schemeID: '0192'
+
+        # Alt 1
+        - ID:
+            value: '991825827'
+
+        # Alt 2
+        - ID: '991825827'
+
   AccountingCustomerParty:
     Party:
       EndpointID: receiver
   LegalMonetaryTotal:
     PayableAmount: 0.00 NOK
   InvoiceLine:
-    - ID: 1
-      LineExtensionAmount: 0 NOK
+    - ID: '1'
+      LineExtensionAmount: #0 NOK
+        value: 0
+        currencyID: NOK
+        
+      InvoicedQuantity:
+        value: 1000.000
+        unitCode: STK
+
+      InvoicedQuantity:
+        value: 1000.000
+
+      InvoicedQuantity: 1000.000
+
       Item:
         Description:
           eng: First item  
           nok: Første produkt
+
+# No regex-based values to allow for combination of value and qualifier in same value
+# For review: allow both object and string as value where we have optional attribute
+# For review: allow both object and string for translated content
+# Force all values in complex types
