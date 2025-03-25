@@ -12,11 +12,14 @@ convert:
 	done
 
 target/entities.gc:
+	@echo "* Downloading UBL $(UBL_VERSION) entities..."
 	@mkdir -p target
-	@wget -O target/entities.gc "$(UBL_URL)"
+	@wget -q -O target/entities.gc "$(UBL_URL)"
 
-target/entities.json: target/entities.gc src/script/jsonify_entities.rb
-	@ruby src/script/jsonify_entities.rb
+target/entities.json: target/entities.gc src/ruby/jsonify_entities.rb
+	@echo "* Converting entities gc to JSON..."
+	@ruby src/ruby/jsonify_entities.rb
 
-target/schema_all.json: target/entities.json src/script/generate_all.rb $(shell ls src/definitions/*.json)
-	@ruby src/script/generate_all.rb
+target/schema_all.json: target/entities.json src/ruby/generate_all.rb $(shell ls src/definitions/*.json)
+	@echo "* Generating 'all' schema..."
+	@ruby src/ruby/generate_all.rb
