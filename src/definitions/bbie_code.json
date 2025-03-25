@@ -1,0 +1,21 @@
+{
+    "oneOf": [
+        {
+            "type": "string"
+        },
+        {
+            "type": "object",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "listID": {
+                    "type": "string"
+                }
+            }
+        }
+    ]
+}

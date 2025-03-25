@@ -1,0 +1,26 @@
+{
+    "oneOf": [
+        {
+            "type": "string"
+        },
+        {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        }
+                    ]
+                },
+                "schemeID": {
+                    "type": "string"
+                }
+            }
+        }
+    ]
+}

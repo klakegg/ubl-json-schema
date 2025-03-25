@@ -1,0 +1,15 @@
+{
+    "oneOf": [
+        {
+            "type": "string"
+        },
+        {
+            "type": "object",
+            "patternProperties": {
+                "^[^\\w]$": {
+                    "type": "string"
+                }
+            }
+        }
+    ]
+}

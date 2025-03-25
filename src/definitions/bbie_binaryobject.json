@@ -1,0 +1,31 @@
+{
+    "oneOf": [
+        {
+            "type": "string"
+        },
+        {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "mimeCode": {
+                    "type": "string"
+                },
+                "encodingCode": {
+                    "type": "string"
+                },
+                "uri": {
+                    "type": "string"
+                },
+                "filename": {
+                    "type": "string"
+                },
+                "content": {
+                    "type": "string"
+                }
+            }
+        }
+    ]
+}
