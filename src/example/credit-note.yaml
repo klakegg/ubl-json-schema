@@ -1,6 +1,6 @@
-$schema: https://json.ubl/CreditNote-2.4
+$schema: ./../../target/schemas/CreditNote.json
 ID: '23'
-IssueDate: 2023-09-28
+IssueDate: '2023-09-28'
 Note: 
   eng: My text here
   nok: Min tekst her

@@ -1,0 +1,60 @@
+{
+  "$schema": "./../../target/schemas/Invoice.json",
+  "CustomizationID": {
+    "value": "my customization id",
+    "schemeID": "my scheme id"
+  },
+  "ID": "my space id",
+  "IssueDate": "2023-09-28",
+  "AccountingSupplierParty": {
+    "Party": {
+      "EndpointID": "sender",
+      "PartyIdentification": [
+        {
+          "ID": {
+            "value": "991825827",
+            "schemeID": "0192"
+          }
+        },
+        {
+          "ID": {
+            "value": "991825827"
+          }
+        },
+        {
+          "ID": "991825827"
+        }
+      ]
+    }
+  },
+  "AccountingCustomerParty": {
+    "Party": {
+      "EndpointID": "receiver"
+    }
+  },
+  "LegalMonetaryTotal": {
+    "PayableAmount": {
+      "value": 0,
+      "currencyID": "NOK"
+    }
+  },
+  "InvoiceLine": [
+    {
+      "ID": "1",
+      "LineExtensionAmount": {
+        "value": 0,
+        "currencyID": "NOK"
+      },
+      "InvoicedQuantity": {
+        "value": 1000,
+        "unitCode": "STK"
+      },
+      "Item": {
+        "Description": {
+          "eng": "First item",
+          "nok": "Første produkt"
+        }
+      }
+    }
+  ]
+}

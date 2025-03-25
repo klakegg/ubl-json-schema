@@ -1,4 +1,4 @@
-$schema: https://json.ubl/Invoice-2.4
+$schema: ./../../target/schemas/Invoice.json
 
 CustomizationID:
   value: my customization id
@@ -6,7 +6,7 @@ CustomizationID:
 
 ID: my space id
 
-IssueDate: 2023-09-28
+IssueDate: '2023-09-28'
 AccountingSupplierParty:
   Party:
     EndpointID: sender
@@ -45,8 +45,3 @@ InvoiceLine:
       Description:
         eng: First item  
         nok: Første produkt
-
-# No regex-based values to allow for combination of value and qualifier in same value
-# For review: allow both object and string as value where we have optional attribute
-# For review: allow both object and string for translated content
-# Force all values in complex types
