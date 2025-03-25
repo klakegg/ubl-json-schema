@@ -30,7 +30,7 @@ target/schemas/Invoice.json: target/schema_all.json
 	@mkdir -p target/schemas
 	@ruby src/ruby/generate_schemas.rb
 
-target/example: target/schames target/example/invoice.json
+target/example: target/schemas target/example/invoice.json
 target/example/invoice.json: target/schemas $(shell ls src/example/*.yaml)
 	@echo "* Generating example invoice..."
 	@mkdir -p target/example
