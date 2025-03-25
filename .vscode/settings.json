@@ -1,5 +1,0 @@
-{
-    "yaml.schemas": {
-        "target/2.3-os.schema.json": ["example/*.yaml"],
-    }
-}

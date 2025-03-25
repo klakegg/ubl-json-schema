@@ -4,10 +4,10 @@ UBL_URL = https://docs.oasis-open.org/ubl/os-UBL-$(UBL_VERSION)/mod/UBL-Entities
 build: target/schema_all.json
 
 clean:
-	@rm -rf target example/*.json
+	@rm -rf target src/example/*.json
 
 convert:
-	@for f in $$(ls example/*.yaml); do \
+	@for f in $$(ls src/example/*.yaml); do \
 		yq -o=json $$f > $$f.json; \
 	done
 
@@ -15,8 +15,8 @@ target/entities.gc:
 	@mkdir -p target
 	@wget -O target/entities.gc "$(UBL_URL)"
 
-target/entities.json: target/entities.gc bin/jsonify_entities.rb
-	@ruby bin/jsonify_entities.rb
+target/entities.json: target/entities.gc src/script/jsonify_entities.rb
+	@ruby src/script/jsonify_entities.rb
 
-target/schema_all.json: target/entities.json bin/generate_all.rb $(shell ls src/definitions/*.json)
-	@ruby bin/generate_all.rb
+target/schema_all.json: target/entities.json src/script/generate_all.rb $(shell ls src/definitions/*.json)
+	@ruby src/script/generate_all.rb
