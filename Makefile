@@ -1,5 +1,5 @@
-UBL_VERSION = 2.4
-UBL_URL = https://docs.oasis-open.org/ubl/os-UBL-$(UBL_VERSION)/mod/UBL-Entities-$(UBL_VERSION).gc
+UBL_VERSION ?= 2.4
+UBL_URL ?= https://docs.oasis-open.org/ubl/os-UBL-$(UBL_VERSION)/mod/UBL-Entities-$(UBL_VERSION).gc
 
 build: target/example
 

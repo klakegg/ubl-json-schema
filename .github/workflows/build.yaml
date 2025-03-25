@@ -16,9 +16,17 @@ jobs:
       matrix:
         version: ['2.3', '2.4']
 
+    env:
+      UBL_VERSION: ${{ matrix.version }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Prepare version labels
+        uses: k15g/action-version-labels@edge
+        with:
+          prefix: project
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -28,8 +36,6 @@ jobs:
 
       - name: Build project
         run: make build
-        env:
-          UBL_VERSION: ${{ matrix.version }}
 
       - name: Package
         run: make package
@@ -40,3 +46,13 @@ jobs:
           name: url-${{ matrix.version }}
           path: target/schemas.zip
           retention-days: 7
+
+      - name: Upload asset
+        uses: k15g/action-github-asset-upload@edge
+        if: startsWith(github.ref, 'refs/tags/v')
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          file: target/schemas.zip
+          name: ubl-${{ matrix.version }}-json-schemas-{{ env.PROJECT_VERSION }}.zip
+          type: application/zip
+          label: JSON Schemas for UBL ${{ matrix.version }}
