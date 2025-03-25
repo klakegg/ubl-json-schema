@@ -1,0 +1,6 @@
+{
+    "yaml.schemas": {
+        "target/schemas/CreditNote.json": "src/example/credit-note.yaml",
+        "target/schemas/Invoice.json": "src/example/invoice.yaml"
+    }
+}

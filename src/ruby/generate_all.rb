@@ -7,6 +7,7 @@ def typeify(bies)
   {
     'type' => 'object',
     'additionalProperties' => false,
+    'minProperties': 1,
     'required' => 
       bies[0]['ModelName'].start_with?('UBL-CommonLibrary') ? [] : ["$schema"] + 
       bies[1..]
@@ -18,7 +19,7 @@ def typeify(bies)
         .map { |bie| [bie['ComponentName'], fieldify(bie)] }
         .to_h,
       )
-  }
+}.compact
 end
 
 def fieldify(bie)

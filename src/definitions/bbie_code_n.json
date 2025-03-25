@@ -1,0 +1,13 @@
+{
+    "oneOf": [
+        {
+            "$ref": "#/definitions/bbie_code"
+        },
+        {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/bbie_code"
+            }
+        }
+    ]
+}
