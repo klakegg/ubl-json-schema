@@ -57,5 +57,5 @@ Dir['src/definitions/*.json'].sort.each do |file|
   schema['definitions'][File.basename(file, '.json')] = JSON.load_file file
 end
 
-File.write 'target/schema_all_pretty.json', JSON.pretty_generate(schema)
+#File.write 'target/schema_all_pretty.json', JSON.pretty_generate(schema)
 File.write 'target/schema_all.json', schema.to_json

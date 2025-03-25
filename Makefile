@@ -25,7 +25,7 @@ target/schema_all.json: target/entities.json src/ruby/generate_all.rb $(shell ls
 	@ruby src/ruby/generate_all.rb
 
 target/schemas: target/schemas/Invoice.json
-target/schemas/Invoice.json: target/schema_all.json
+target/schemas/Invoice.json: target/schema_all.json src/ruby/generate_schemas.rb
 	@echo "* Generating schemas..."
 	@mkdir -p target/schemas
 	@ruby src/ruby/generate_schemas.rb
@@ -35,3 +35,9 @@ target/example/invoice.json: target/schemas $(shell ls src/example/*.yaml)
 	@echo "* Generating example invoice..."
 	@mkdir -p target/example
 	@ruby src/ruby/jsonify_examples.rb
+
+package: target/schemas.zip
+target/schemas.zip: target/schemas
+	@echo "* Packaging schemas..."
+	@rm -rf target/schemas.zip
+	@cd target/schemas && zip -r ../schemas.zip .
