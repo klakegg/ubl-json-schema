@@ -1,3 +1,4 @@
+require 'bundler/setup'
 require 'json'
 
 src = JSON.load_file 'target/entities.json'

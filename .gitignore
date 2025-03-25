@@ -1,3 +1,4 @@
+.bundle/vendor
 /example/*.json
 /target
 .DS_Store
