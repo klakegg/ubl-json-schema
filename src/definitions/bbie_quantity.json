@@ -1,22 +1,15 @@
 {
-    "oneOf": [
-        {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "value"
+    ],
+    "properties": {
+        "value": {
             "type": "number"
         },
-        {
-            "type": "object",
-            "additionalProperties": false,
-            "required": [
-                "value"
-            ],
-            "properties": {
-                "value": {
-                    "type": "number"
-                },
-                "unitCode": {
-                    "type": "string"
-                }
-            }
+        "unitCode": {
+            "type": "string"
         }
-    ]
+    }
 }

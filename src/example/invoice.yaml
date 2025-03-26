@@ -4,12 +4,14 @@ CustomizationID:
   value: my customization id
   schemeID: my scheme id
 
-ID: my space id
+ID: 
+  value: my space id
 
 IssueDate: '2023-09-28'
 AccountingSupplierParty:
   Party:
-    EndpointID: sender
+    EndpointID: 
+      value: sender
     PartyIdentification:
 
       # Alt 0
@@ -22,17 +24,19 @@ AccountingSupplierParty:
           value: '991825827'
 
       # Alt 2
-      - ID: '991825827'
+      #- ID: '991825827'
 
 AccountingCustomerParty:
   Party:
-    EndpointID: receiver
+    EndpointID: 
+      value: receiver
 LegalMonetaryTotal:
   PayableAmount: 
     value: 0.00
     currencyID: NOK
 InvoiceLine:
-  - ID: '1'
+  - ID: 
+      value: '1'
     LineExtensionAmount: #0 NOK
       value: 0
       currencyID: NOK

@@ -10,7 +10,7 @@ def get_deps(id, deps = [])
 
       if d.include? '$ref'
         ref = d['$ref'].split('/').last
-      elsif d.include? 'oneOf'
+      elsif d.include? 'oneOf' and d['oneOf'][0].include? '$ref'
         ref = d['oneOf'][0]['$ref'].split('/').last
       end
 

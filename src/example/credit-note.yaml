@@ -1,22 +1,28 @@
 $schema: ./../../target/schemas/CreditNote.json
-ID: '23'
+ID: 
+  value: '23'
 IssueDate: '2023-09-28'
 Note: 
   eng: My text here
   nok: Min tekst her
 AccountingSupplierParty:
   Party:
-    EndpointID: "er"
+    EndpointID: 
+      value: "er"
     PartyIdentification:
-      - ID: '1234'
-      - ID: '12346'
+      - ID: 
+          value: '1234'
+      - ID: 
+          value: '12346'
 AccountingCustomerParty:
   Party:
-    EndpointID: "er"
+    EndpointID: 
+      value: "er"
 LegalMonetaryTotal:
   PayableAmount: 
     value: 0
     currencyID: NOK
 CreditNoteLine:
-  - ID: '1'
+  - ID: 
+      value: '1'
   
