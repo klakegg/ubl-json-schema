@@ -43,14 +43,14 @@ jobs:
       - name: Upload schemas to artifact
         uses: actions/upload-artifact@v4
         with:
-          name: url-${{ matrix.version }}
+          name: url-${{ matrix.version }}-json-schema
           path: target/schemas.zip
           retention-days: 7
 
       - name: Upload Typescript definition to artifact
         uses: actions/upload-artifact@v4
         with:
-          name: url-${{ matrix.version }}
+          name: url-${{ matrix.version }}-ts
           path: target/ubl.d.ts
           retention-days: 7
 
