@@ -6,11 +6,7 @@
     ],
     "properties": {
         "value": {
-            "oneOf": [
-                {
-                    "type": "string"
-                }
-            ]
+            "type": "string"
         },
         "schemeID": {
             "type": "string"

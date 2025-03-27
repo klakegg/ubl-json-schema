@@ -1,0 +1,15 @@
+{
+    "type": "object",
+    "patternProperties": {
+        ".+": {
+            "oneOf": [
+                {"type": "array"},
+                {"type": "boolean"},
+                {"type": "number"},
+                {"type": "null"},
+                {"type": "object"},
+                {"type": "string"}
+            ]
+        }
+    }
+}

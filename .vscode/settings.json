@@ -1,6 +1,18 @@
 {
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "src/definitions/*.json"
+            ],
+            "url": "http://json-schema.org/draft-07/schema"
+        },
+    ],
     "yaml.schemas": {
-        "target/schemas/CreditNote.json": "src/example/credit-note.yaml",
-        "target/schemas/Invoice.json": "src/example/invoice.yaml"
+        "target/schemas/CreditNote.json": [
+            "src/example/credit-note.yaml"
+        ],
+        "target/schemas/Invoice.json": [
+            "src/example/invoice.yaml"
+        ]
     }
 }
