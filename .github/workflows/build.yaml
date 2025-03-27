@@ -60,9 +60,9 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           file: target/schemas.zip
-          name: ubl-${{ matrix.version }}-json-schemas-{{ env.PROJECT_VERSION }}.zip
+          name: ubl-${{ matrix.version }}-json-schemas-${{ env.PROJECT_VERSION }}.zip
           type: application/zip
-          label: JSON Schemas for UBL ${{ matrix.version }}
+          label: UBL ${{ matrix.version }} - JSON Schemas
 
       - name: Upload asset [TypeScript definitions]
         uses: k15g/action-github-asset-upload@edge
@@ -70,6 +70,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           file: target/ubl.d.ts 
-          name: ubl-${{ matrix.version }}-{{ env.PROJECT_VERSION }}.d.ts
+          name: ubl-${{ matrix.version }}-${{ env.PROJECT_VERSION }}.d.ts
           type: application/x-typescript
-          label: TypeScript definitions for UBL ${{ matrix.version }}
+          label: UBL ${{ matrix.version }} - TypeScript definitions
