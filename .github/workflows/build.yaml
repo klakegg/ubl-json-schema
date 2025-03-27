@@ -40,14 +40,21 @@ jobs:
       - name: Package
         run: make package
 
-      - name: Upload artifact
+      - name: Upload schemas to artifact
         uses: actions/upload-artifact@v4
         with:
           name: url-${{ matrix.version }}
           path: target/schemas.zip
           retention-days: 7
 
-      - name: Upload asset
+      - name: Upload Typescript definition to artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: url-${{ matrix.version }}
+          path: target/ubl.d.ts
+          retention-days: 7
+
+      - name: Upload asset [Schemas]
         uses: k15g/action-github-asset-upload@edge
         if: startsWith(github.ref, 'refs/tags/v')
         with:
@@ -56,3 +63,13 @@ jobs:
           name: ubl-${{ matrix.version }}-json-schemas-{{ env.PROJECT_VERSION }}.zip
           type: application/zip
           label: JSON Schemas for UBL ${{ matrix.version }}
+
+      - name: Upload asset [TypeScript definitions]
+        uses: k15g/action-github-asset-upload@edge
+        if: startsWith(github.ref, 'refs/tags/v')
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          file: target/ubl.d.ts 
+          name: ubl-${{ matrix.version }}-{{ env.PROJECT_VERSION }}.d.ts
+          type: application/x-typescript
+          label: TypeScript definitions for UBL ${{ matrix.version }}

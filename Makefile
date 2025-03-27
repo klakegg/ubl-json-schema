@@ -1,7 +1,10 @@
 UBL_VERSION ?= 2.4
 UBL_URL ?= https://docs.oasis-open.org/ubl/os-UBL-$(UBL_VERSION)/mod/UBL-Entities-$(UBL_VERSION).gc
 
-build: target/example
+build: \
+	target/schemas \
+	target/example \
+	typescript
 
 clean:
 	@rm -rf target
@@ -41,3 +44,8 @@ target/schemas.zip: target/schemas
 	@echo "* Packaging schemas..."
 	@rm -rf target/schemas.zip
 	@cd target/schemas && zip -r ../schemas.zip .
+
+typescript: target/ubl.d.ts
+target/ubl.d.ts: target/entities.json src/ruby/generate_ts.rb $(shell ls src/definitions/*.ts)
+	@echo "* Generating TypeScript definitions..."
+	@ruby src/ruby/generate_ts.rb > target/ubl.d.ts
